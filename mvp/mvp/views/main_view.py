@@ -47,6 +47,8 @@ class MainView(MainContract.View):
     def on_clear_all_button_clicked(self, e):
         # Clear all notes
         # Your code here
+        if self.presenter:
+            self.presenter.clear_all()
         pass
 
     def on_add_note_button_clicked(self, e):
@@ -54,3 +56,5 @@ class MainView(MainContract.View):
         self.note_input.SetValue("")
         # Add note
         # Your code here
+        if self.presenter:
+            self.presenter.add_note(content)
